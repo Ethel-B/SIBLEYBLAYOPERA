@@ -78,7 +78,7 @@ namespace SIBLEYBLAYOPERA.Services.StaffLog1Service
             return log;
         }
 
-        public async Task<StaffLog1> GetSingleLog(int telephone)
+        public async Task<StaffLog1> GetSingleLogByTelephone(int telephone)
         {
             var log = await _context.StaffLog1.FindAsync(telephone);
             if (log is null)
@@ -96,7 +96,7 @@ namespace SIBLEYBLAYOPERA.Services.StaffLog1Service
             return log;
         }
 
-        public async Task<StaffLog1> GetSingleLogByStaffIDNumber(string staffidnumber)
+        public async Task<StaffLog1> GetSingleLogByStaffIDNumber(int staffidnumber)
         {
             var log = await _context.StaffLog1.FindAsync(staffidnumber);
             if (log is null)
@@ -141,7 +141,7 @@ namespace SIBLEYBLAYOPERA.Services.StaffLog1Service
             return log;
         }
 
-        public async Task<StaffLog1> GetSingleLog(string modeofpayment)
+        public async Task<StaffLog1> GetSingleLogByModeOfPayment(string modeofpayment)
         {
             var log = await _context.StaffLog1.FindAsync(modeofpayment);
             if (log is null)
@@ -159,7 +159,7 @@ namespace SIBLEYBLAYOPERA.Services.StaffLog1Service
             return log;
         }
 
-        public async Task<StaffLog1> GetSingleLog(DateTime netwageaccounting)
+        public async Task<StaffLog1> GetSingleLogByNetWageAccounting(DateTime netwageaccounting)
         {
             var log = await _context.StaffLog1.FindAsync(netwageaccounting);
             if (log is null)

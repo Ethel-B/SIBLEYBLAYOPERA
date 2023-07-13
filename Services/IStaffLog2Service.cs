@@ -18,11 +18,11 @@ namespace SIBLEYBLAYOPERA.Services.StaffLog2Service
 
         public Task<StaffLog2> GetSingleLogByDepartment(string department);
 
-        public Task<StaffLog2> GetSingleLog(int telephone);
+        public Task<StaffLog2> GetSingleLogByTelephone(int telephone);
 
         public Task<StaffLog2> GetSingleLogByRoleTitle(string roletitle);
 
-        public Task<StaffLog2> GetSingleLogByStaffIDNumber(string staffidnumber);
+        public Task<StaffLog2> GetSingleLogByStaffIDNumber(int staffidnumber);
 
         public Task<StaffLog2> GetSingleLogByContractAgreement(DateTime contractagreement);
 
@@ -32,11 +32,11 @@ namespace SIBLEYBLAYOPERA.Services.StaffLog2Service
 
         public Task<StaffLog2> GetSingleLogByNetWage(int netwage);
 
-        public Task<StaffLog2> GetSingleLog(string modeofpayment);
+        public Task<StaffLog2> GetSingleLogByModeOfPayment(string modeofpayment);
 
         public Task<StaffLog2> GetSingleLogByEWageAccountNumber(int ewageaccountnumber);
 
-        public Task<StaffLog2> GetSingleLog(DateTime netwageaccounting);
+        public Task<StaffLog2> GetSingleLogByNetWageAccounting(DateTime netwageaccounting);
 
         public Task<StaffLog2> GetSingleLogBySocialSecurityAddress(string socialsecurityaddress);
 

@@ -31,7 +31,7 @@ namespace SIBLEYBLAYOPERA.Controllers
         [HttpGet("GetSingleLogByFirstName/{FirstName}")]
         public async Task<ActionResult<StaffLog1>> GetSingleLogByFirstName(string firstname)
         {
-            var result = await _staffLog1Service.GetSingleLog(firstname);
+            var result = await _staffLog1Service.GetSingleLogByFirstName(firstname);
             if (result is null)
                 return NotFound("Log not found.");
 
@@ -41,7 +41,7 @@ namespace SIBLEYBLAYOPERA.Controllers
         [HttpGet("GetSingleLogByMiddleName/{MiddleName}")]
         public async Task<ActionResult<StaffLog1>> GetSingleLogByMiddleName(string middlename)
         {
-            var result = await _staffLog1Service.GetSingleLog(middlename);
+            var result = await _staffLog1Service.GetSingleLogByMiddleName(middlename);
             if (result is null)
                 return NotFound("Log not found.");
 
@@ -51,7 +51,7 @@ namespace SIBLEYBLAYOPERA.Controllers
         [HttpGet("GetSingleLogByLastName/{LastName}")]
         public async Task<ActionResult<StaffLog1>> GetSingleLogByLastName(string lastname)
         {
-            var result = await _staffLog1Service.GetSingleLog(lastname);
+            var result = await _staffLog1Service.GetSingleLogByLastName(lastname);
             if (result is null)
                 return NotFound("Log not found.");
 
@@ -61,7 +61,7 @@ namespace SIBLEYBLAYOPERA.Controllers
         [HttpGet("GetSingleLogByDateOfBirth/{DateOfBirth}")]
         public async Task<ActionResult<StaffLog1>> GetSingleLogByDateOfBirth(string dateofbirth)
         {
-            var result = await _staffLog1Service.GetSingleLog(dateofbirth);
+            var result = await _staffLog1Service.GetSingleLogByDateOfBirth(dateofbirth);
             if (result is null)
                 return NotFound("Log not found.");
 
@@ -71,7 +71,7 @@ namespace SIBLEYBLAYOPERA.Controllers
         [HttpGet("GetSingleLogByAddress/{Address}")]
         public async Task<ActionResult<StaffLog1>> GetSingleLogByAddress(string address)
         {
-            var result = await _staffLog1Service.GetSingleLog(address);
+            var result = await _staffLog1Service.GetSingleLogByAddress(address);
             if (result is null)
                 return NotFound("Log not found.");
 
@@ -81,7 +81,7 @@ namespace SIBLEYBLAYOPERA.Controllers
         [HttpGet("GetSingleLogByDepartment/{Department}")]
         public async Task<ActionResult<StaffLog1>> GetSingleLogByDepartment(string department)
         {
-            var result = await _staffLog1Service.GetSingleLog(department);
+            var result = await _staffLog1Service.GetSingleLogByDepartment(department);
             if (result is null)
                 return NotFound("Log not found.");
 
@@ -91,7 +91,7 @@ namespace SIBLEYBLAYOPERA.Controllers
         [HttpGet("GetSingleLogByTelephone/{Telephone}")]
         public async Task<ActionResult<StaffLog1>> GetSingleLogByTelephone(int telephone)
         {
-            var result = await _staffLog1Service.GetSingleLog(telephone);
+            var result = await _staffLog1Service.GetSingleLogByTelephone(telephone);
             if (result is null)
                 return NotFound("Log not found.");
 
@@ -101,7 +101,7 @@ namespace SIBLEYBLAYOPERA.Controllers
         [HttpGet("GetSingleLogByRoleTitle/{RoleTitle}")]
         public async Task<ActionResult<StaffLog1>> GetSingleLogByRoleTitle(string roletitle)
         {
-            var result = await _staffLog1Service.GetSingleLog(roletitle);
+            var result = await _staffLog1Service.GetSingleLogByRoleTitle(roletitle);
             if (result is null)
                 return NotFound("Log not found.");
 
@@ -111,7 +111,7 @@ namespace SIBLEYBLAYOPERA.Controllers
         [HttpGet("GetSingleLogByStaffIDNumber/{StaffIDNumber}")]
         public async Task<ActionResult<StaffLog1>> GetSingleLogByStaffIDNumber(int staffidnumber)
         {
-            var result = await _staffLog1Service.GetSingleLog(staffidnumber);
+            var result = await _staffLog1Service.GetSingleLogByStaffIDNumber(staffidnumber);
             if (result is null)
                 return NotFound("Log not found.");
 
@@ -121,7 +121,7 @@ namespace SIBLEYBLAYOPERA.Controllers
         [HttpGet("GetSingleLogByContractAgreement/{ContractAgreement}")]
         public async Task<ActionResult<StaffLog1>> GetSingleLogByContractAgreement(DateTime contractagreement)
         {
-            var result = await _staffLog1Service.GetSingleLog(contractagreement);
+            var result = await _staffLog1Service.GetSingleLogByContractAgreement(contractagreement);
             if (result is null)
                 return NotFound("Log not found.");
 
@@ -131,7 +131,7 @@ namespace SIBLEYBLAYOPERA.Controllers
         [HttpGet("GetSingleLogByContractAgreementExpiration/{ContractAgreementExpiration}")]
         public async Task<ActionResult<StaffLog1>> GetSingleLogByContractAgreementExpiration(DateTime contractagreementexpiration)
         {
-            var result = await _staffLog1Service.GetSingleLog(contractagreementexpiration);
+            var result = await _staffLog1Service.GetSingleLogByContractAgreementExpiration(contractagreementexpiration);
             if (result is null)
                 return NotFound("Log not found.");
 
@@ -141,7 +141,7 @@ namespace SIBLEYBLAYOPERA.Controllers
         [HttpGet("GetSingleLogByGrossWage/{GrossWage}")]
         public async Task<ActionResult<StaffLog1>> GetSingleLogByGrossWage(int grosswage)
         {
-            var result = await _staffLog1Service.GetSingleLog(grosswage);
+            var result = await _staffLog1Service.GetSingleLogByGrossWage(grosswage);
             if (result is null)
                 return NotFound("Log not found.");
 
@@ -151,7 +151,7 @@ namespace SIBLEYBLAYOPERA.Controllers
         [HttpGet("GetSingleLogByNetWage/{NetWage}")]
         public async Task<ActionResult<StaffLog1>> GetSingleLogByNetWage(int netwage)
         {
-            var result = await _staffLog1Service.GetSingleLog(netwage);
+            var result = await _staffLog1Service.GetSingleLogByNetWage(netwage);
             if (result is null)
                 return NotFound("Log not found.");
 
@@ -161,7 +161,7 @@ namespace SIBLEYBLAYOPERA.Controllers
         [HttpGet("GetSingleLogByModeOfPayment/{ModeOfPayment}")]
         public async Task<ActionResult<StaffLog1>> GetSingleLogByModeOfPayment(string modeofpayment)
         {
-            var result = await _staffLog1Service.GetSingleLog(modeofpayment);
+            var result = await _staffLog1Service.GetSingleLogByModeOfPayment(modeofpayment);
             if (result is null)
                 return NotFound("Log not found.");
 
@@ -171,7 +171,7 @@ namespace SIBLEYBLAYOPERA.Controllers
         [HttpGet("GetSingleLogByEWageAccountNumber/{EWageAccountnumber}")]
         public async Task<ActionResult<StaffLog1>> GetSingleLogByEWageAccountNumber(int ewageaccountnumber)
         {
-            var result = await _staffLog1Service.GetSingleLog(ewageaccountnumber);
+            var result = await _staffLog1Service.GetSingleLogByEWageAccountNumber(ewageaccountnumber);
             if (result is null)
                 return NotFound("Log not found.");
 
@@ -181,7 +181,7 @@ namespace SIBLEYBLAYOPERA.Controllers
         [HttpGet("GetSingleLogByNetWageAccounting/{NetWageAccounting}")]
         public async Task<ActionResult<StaffLog1>> GetSingleLogByNetWageAccounting(DateTime netwageaccounting)
         {
-            var result = await _staffLog1Service.GetSingleLog(netwageaccounting);
+            var result = await _staffLog1Service.GetSingleLogByNetWageAccounting(netwageaccounting);
             if (result is null)
                 return NotFound("Log not found.");
 
@@ -191,7 +191,7 @@ namespace SIBLEYBLAYOPERA.Controllers
         [HttpGet("GetSingleLogBySocialSecurityAddress/{SocialSecurityAddress}")]
         public async Task<ActionResult<StaffLog1>> GetSingleLogBySocialSecurityAddress(string socialsecurityaddress)
         {
-            var result = await _staffLog1Service.GetSingleLog(socialsecurityaddress);
+            var result = await _staffLog1Service.GetSingleLogBySocialSecurityAddress(socialsecurityaddress);
             if (result is null)
                 return NotFound("Log not found.");
 
@@ -201,7 +201,7 @@ namespace SIBLEYBLAYOPERA.Controllers
         [HttpGet("GetSingleLoggBySocialSecurityWage/{SocialSecurityWage}")]
         public async Task<ActionResult<StaffLog1>> GetSingleLogBySocialSecurityWage(int socialsecuritywage)
         {
-            var result = await _staffLog1Service.GetSingleLog(socialsecuritywage);
+            var result = await _staffLog1Service.GetSingleLogBySocialSecurityWage(socialsecuritywage);
             if (result is null)
                 return NotFound("Log not found.");
 
@@ -211,7 +211,7 @@ namespace SIBLEYBLAYOPERA.Controllers
         [HttpGet("GetSingleLogBySocialSecurityModeOfPayment/{SocialSecurityModeOfPayment}")]
         public async Task<ActionResult<StaffLog1>> GetSingleLogBySocialSecurityModeOfPayment(string socialsecuritymodeofpayment)
         {
-            var result = await _staffLog1Service.GetSingleLog(socialsecuritymodeofpayment);
+            var result = await _staffLog1Service.GetSingleLogBySocialSecurityModeOfPayment(socialsecuritymodeofpayment);
             if (result is null)
                 return NotFound("Log not found.");
 
@@ -221,7 +221,7 @@ namespace SIBLEYBLAYOPERA.Controllers
         [HttpGet("GetSingleLogBySocialSecurityEwageAccountNumber/{SocialSecurityEwageAccountNumber}")]
         public async Task<ActionResult<StaffLog1>> GetSingleLogBySocialSecurityEwageAccountNumber(int socialsecurityewageaccountnumber)
         {
-            var result = await _staffLog1Service.GetSingleLog(socialsecurityewageaccountnumber);
+            var result = await _staffLog1Service.GetSingleLogBySocialSecurityEwageAccountNumber(socialsecurityewageaccountnumber);
             if (result is null)
                 return NotFound("Log not found.");
 
@@ -231,7 +231,7 @@ namespace SIBLEYBLAYOPERA.Controllers
         [HttpGet("GetSingleLogBySocialSecurityWageAccounting/{SocialSecurityWageAccounting}")]
         public async Task<ActionResult<StaffLog1>> GetSingleLogBySocialSecurityWageAccounting(DateTime socialsecuritywageaccounting)
         {
-            var result = await _staffLog1Service.GetSingleLog(socialsecuritywageaccounting);
+            var result = await _staffLog1Service.GetSingleLogBySocialSecurityWageAccounting(socialsecuritywageaccounting);
             if (result is null)
                 return NotFound("Log not found.");
 
@@ -241,7 +241,7 @@ namespace SIBLEYBLAYOPERA.Controllers
         [HttpGet("GetSingleLogByVacationDays/{VacationDays}")]
         public async Task<ActionResult<StaffLog1>> GetSingleLogByVacationDays(int vacationdays)
         {
-            var result = await _staffLog1Service.GetSingleLog(vacationdays);
+            var result = await _staffLog1Service.GetSingleLogByVacationDays(vacationdays);
             if (result is null)
                 return NotFound("Log not found.");
 
@@ -251,7 +251,7 @@ namespace SIBLEYBLAYOPERA.Controllers
         [HttpGet("GetSingleLogByNumberOfExhaustedVacationDays/{NumberOfExhaustedVacationDays}")]
         public async Task<ActionResult<StaffLog1>> GetSingleLogByNumberOfExhaustedVacationDays(int numberofexhaustedvacationdays)
         {
-            var result = await _staffLog1Service.GetSingleLog(numberofexhaustedvacationdays);
+            var result = await _staffLog1Service.GetSingleLogByNumberOfExhaustedVacationDays(numberofexhaustedvacationdays);
             if (result is null)
                 return NotFound("Log not found.");
 
@@ -261,7 +261,7 @@ namespace SIBLEYBLAYOPERA.Controllers
         [HttpGet("GetSingleLogByNumberOfUnExhaustedVacationDays/{NumberOfUnExhaustedVacationDays}")]
         public async Task<ActionResult<StaffLog1>> GetSingleLogByNumberOfUnExhaustedVacationDays(int numberofunexhaustedvacationdays)
         {
-            var result = await _staffLog1Service.GetSingleLog(numberofunexhaustedvacationdays);
+            var result = await _staffLog1Service.GetSingleLogByNumberOfUnExhaustedVacationDays(numberofunexhaustedvacationdays);
             if (result is null)
                 return NotFound("Log not found.");
 
