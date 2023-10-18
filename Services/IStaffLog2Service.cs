@@ -36,7 +36,7 @@ namespace SIBLEYBLAYOPERA.Services.StaffLog2Service
 
         public Task<StaffLog2> GetSingleLogByEWageAccountNumber(int ewageaccountnumber);
 
-        public Task<StaffLog2> GetSingleLogByNetWageAccounting(DateTime netwageaccounting);
+        public Task<StaffLog2> GetSingeLogByNetWageAccounting(DateTime netwageaccounting);
 
         public Task<StaffLog2> GetSingleLogBySocialSecurityAddress(string socialsecurityaddress);
 

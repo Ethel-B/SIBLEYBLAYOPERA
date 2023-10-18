@@ -28,7 +28,7 @@ namespace SIBLEYBLAYOPERA.Services.TaxExpendituresLogService
 
         public async Task<TaxExpendituresLog> GetSingleExpendituresByTypeOfTax(string typeoftax)
         {
-            var expenditures = await _context.TaxExpendituresLog.FindAsync(typeoftax);
+          var expenditures = await _context.TaxExpendituresLog.Where(e => e.TypeOfTax == typeoftax).FirstOrDefaultAsync();
             if (expenditures is null)
                 return null;
 
@@ -37,7 +37,7 @@ namespace SIBLEYBLAYOPERA.Services.TaxExpendituresLogService
 
         public async Task<TaxExpendituresLog> GetSingleExpendituresByYear(DateTime year)
         {
-            var expenditures = await _context.TaxExpendituresLog.FindAsync(year);
+            var expenditures = await _context.TaxExpendituresLog.Where(e => e.Year == year).FirstOrDefaultAsync();
             if (expenditures is null)
                 return null;
 
@@ -46,7 +46,7 @@ namespace SIBLEYBLAYOPERA.Services.TaxExpendituresLogService
 
         public async Task<TaxExpendituresLog> GetSingleExpendituresByTotalYearlyExpenditure(int totalyearlyexpenditure)
         {
-            var expenditures = await _context.TaxExpendituresLog.FindAsync(totalyearlyexpenditure);
+            var expenditures = await _context.TaxExpendituresLog.Where(e => e.TotalYearlyExpenditure == totalyearlyexpenditure).FirstOrDefaultAsync();
             if (expenditures is null)
                 return null;
 
@@ -55,7 +55,7 @@ namespace SIBLEYBLAYOPERA.Services.TaxExpendituresLogService
 
         public async Task<TaxExpendituresLog> GetSingleExpendituresByTaxPaymentLocation(string taxpaymentlocation)
         {
-            var expenditures = await _context.TaxExpendituresLog.FindAsync(taxpaymentlocation);
+            var expenditures = await _context.TaxExpendituresLog.Where(e => e.TaxPaymentLocation == taxpaymentlocation).FirstOrDefaultAsync();
             if (expenditures is null)
                 return null;
 
@@ -64,7 +64,7 @@ namespace SIBLEYBLAYOPERA.Services.TaxExpendituresLogService
 
         public async Task<TaxExpendituresLog> GetSingleExpendituresByClearedAmount(int clearedamount)
         {
-            var expenditures = await _context.TaxExpendituresLog.FindAsync(clearedamount);
+            var expenditures = await _context.TaxExpendituresLog.Where(e => e.ClearedAmount == clearedamount).FirstOrDefaultAsync();
             if (expenditures is null)
                 return null;
 
@@ -73,7 +73,7 @@ namespace SIBLEYBLAYOPERA.Services.TaxExpendituresLogService
 
         public async Task<TaxExpendituresLog> GetSingleExpendituresByUnClearedAmount(int unclearedamount)
         {
-            var expenditures = await _context.TaxExpendituresLog.FindAsync(unclearedamount);
+            var expenditures = await _context.TaxExpendituresLog.Where(e => e.UnClearedAmount == unclearedamount).FirstOrDefaultAsync();
             if (expenditures is null)
                 return null;
 
@@ -82,7 +82,7 @@ namespace SIBLEYBLAYOPERA.Services.TaxExpendituresLogService
 
         public async Task<TaxExpendituresLog> GetSingleExpendituresByModeOfPayment(string modeofpayment)
         {
-            var expenditures = await _context.TaxExpendituresLog.FindAsync(modeofpayment);
+            var expenditures = await _context.TaxExpendituresLog.Where(e => e.ModeOfPayment == modeofpayment).FirstOrDefaultAsync();
             if (expenditures is null)
                 return null;
 
@@ -91,7 +91,7 @@ namespace SIBLEYBLAYOPERA.Services.TaxExpendituresLogService
 
         public async Task<TaxExpendituresLog> GetSingleExpendituresByFirstPayment(DateTime firstpayment)
         {
-            var expenditures = await _context.TaxExpendituresLog.FindAsync(firstpayment);
+            var expenditures = await _context.TaxExpendituresLog.Where(e => e.FirstPayment == firstpayment).FirstOrDefaultAsync();
             if (expenditures is null)
                 return null;
 
@@ -100,7 +100,7 @@ namespace SIBLEYBLAYOPERA.Services.TaxExpendituresLogService
 
         public async Task<TaxExpendituresLog> GetSingleExpendituresBySecondPayment(DateTime secondpayment)
         {
-            var expenditures = await _context.TaxExpendituresLog.FindAsync(secondpayment);
+            var expenditures = await _context.TaxExpendituresLog.Where(e => e.SecondPayment == secondpayment).FirstOrDefaultAsync();
             if (expenditures is null)
                 return null;
 
@@ -109,7 +109,7 @@ namespace SIBLEYBLAYOPERA.Services.TaxExpendituresLogService
 
         public async Task<TaxExpendituresLog> GetSingleExpendituresByAmountOfFirstPayment(int amountoffirstpayment)
         {
-            var expenditures = await _context.TaxExpendituresLog.FindAsync(amountoffirstpayment);
+            var expenditures = await _context.TaxExpendituresLog.Where(e => e.AmountOfFirstPayment == amountoffirstpayment).FirstOrDefaultAsync();
             if (expenditures is null)
                 return null;
 
@@ -118,7 +118,7 @@ namespace SIBLEYBLAYOPERA.Services.TaxExpendituresLogService
 
         public async Task<TaxExpendituresLog> GetSingleExpendituresByAmountOfSecondPayment(int amountofsecondpayment)
         {
-            var expenditures = await _context.TaxExpendituresLog.FindAsync(amountofsecondpayment);
+            var expenditures = await _context.TaxExpendituresLog.Where(e => e.AmountOfSecondPayment == amountofsecondpayment).FirstOrDefaultAsync();
             if (expenditures is null)
                 return null;
 
@@ -127,7 +127,7 @@ namespace SIBLEYBLAYOPERA.Services.TaxExpendituresLogService
 
         public async Task<TaxExpendituresLog> GetSingleExpendituresByTaxReceiptIDNumber(int taxreceiptidnumber)
         {
-            var expenditures = await _context.TaxExpendituresLog.FindAsync(taxreceiptidnumber);
+            var expenditures = await _context.TaxExpendituresLog.Where(e => e.TaxReceiptIDNumber == taxreceiptidnumber).FirstOrDefaultAsync();
             if (expenditures is null)
                 return null;
 
@@ -143,8 +143,8 @@ namespace SIBLEYBLAYOPERA.Services.TaxExpendituresLogService
 
         public async Task<List<TaxExpendituresLog>> UpdateExpendituresByTypeOfTax(string typeoftax, TaxExpendituresLog request)
         {
-            var expenditures = await _context.TaxExpendituresLog.FindAsync(typeoftax);
-            if (expenditures is null)
+            var expenditures = await _context.TaxExpendituresLog.Where(e => e.TypeOfTax == typeoftax).FirstOrDefaultAsync();
+           if (expenditures is null)
                 return null;
 
             expenditures.TypeOfTax = request.TypeOfTax;
@@ -155,7 +155,7 @@ namespace SIBLEYBLAYOPERA.Services.TaxExpendituresLogService
 
         public async Task<List<TaxExpendituresLog>> UpdateExpendituresByYear(DateTime year, TaxExpendituresLog request)
         {
-            var expenditures = await _context.TaxExpendituresLog.FindAsync(year);
+            var expenditures = await _context.TaxExpendituresLog.Where(e => e.Year == year).FirstOrDefaultAsync();
             if (expenditures is null)
                 return null;
 
@@ -167,7 +167,7 @@ namespace SIBLEYBLAYOPERA.Services.TaxExpendituresLogService
 
         public async Task<List<TaxExpendituresLog>> UpdateExpendituresByTotalYearlyExpenditure(int totalyearlyexpenditure, TaxExpendituresLog request)
         {
-            var expenditures = await _context.TaxExpendituresLog.FindAsync(totalyearlyexpenditure);
+            var expenditures = await _context.TaxExpendituresLog.Where(e => e.TotalYearlyExpenditure == totalyearlyexpenditure).FirstOrDefaultAsync();
             if (expenditures is null)
                 return null;
 
@@ -179,7 +179,7 @@ namespace SIBLEYBLAYOPERA.Services.TaxExpendituresLogService
 
         public async Task<List<TaxExpendituresLog>> UpdateExpendituresByTaxPaymentLocation(string taxpaymentlocation, TaxExpendituresLog request)
         {
-            var expenditures = await _context.TaxExpendituresLog.FindAsync(taxpaymentlocation);
+            var expenditures = await _context.TaxExpendituresLog.Where(e => e.TaxPaymentLocation == taxpaymentlocation).FirstOrDefaultAsync();
             if (expenditures is null)
                 return null;
 
@@ -191,7 +191,7 @@ namespace SIBLEYBLAYOPERA.Services.TaxExpendituresLogService
 
         public async Task<List<TaxExpendituresLog>> UpdateExpendituresByClearedAmount(int clearedamount, TaxExpendituresLog request)
         {
-            var expenditures = await _context.TaxExpendituresLog.FindAsync(clearedamount);
+            var expenditures = await _context.TaxExpendituresLog.Where(e => e.ClearedAmount == clearedamount).FirstOrDefaultAsync();
             if (expenditures is null)
                 return null;
 
@@ -203,7 +203,7 @@ namespace SIBLEYBLAYOPERA.Services.TaxExpendituresLogService
 
         public async Task<List<TaxExpendituresLog>> UpdateExpendituresByUnClearedAmount(int unclearedamount, TaxExpendituresLog request)
         {
-            var expenditures = await _context.TaxExpendituresLog.FindAsync(unclearedamount);
+            var expenditures = await _context.TaxExpendituresLog.Where(e => e.UnClearedAmount == unclearedamount).FirstOrDefaultAsync();
             if (expenditures is null)
                 return null;
 
@@ -215,7 +215,7 @@ namespace SIBLEYBLAYOPERA.Services.TaxExpendituresLogService
 
         public async Task<List<TaxExpendituresLog>> UpdateExpendituresByModeOfPayment(string modeofpayment, TaxExpendituresLog request)
         {
-            var expenditures = await _context.TaxExpendituresLog.FindAsync(modeofpayment);
+            var expenditures = await _context.TaxExpendituresLog.Where(e => e.ModeOfPayment == modeofpayment).FirstOrDefaultAsync();
             if (expenditures is null)
                 return null;
 
@@ -227,7 +227,7 @@ namespace SIBLEYBLAYOPERA.Services.TaxExpendituresLogService
 
         public async Task<List<TaxExpendituresLog>> UpdateExpendituresByFirstPayment(DateTime firstpayment, TaxExpendituresLog request)
         {
-            var expenditures = await _context.TaxExpendituresLog.FindAsync(firstpayment);
+            var expenditures = await _context.TaxExpendituresLog.Where(e => e.FirstPayment == firstpayment).FirstOrDefaultAsync();
             if (expenditures is null)
                 return null;
 
@@ -239,7 +239,7 @@ namespace SIBLEYBLAYOPERA.Services.TaxExpendituresLogService
 
         public async Task<List<TaxExpendituresLog>> UpdateExpendituresBySecondPayment(DateTime secondpayment, TaxExpendituresLog request)
         {
-            var expenditures = await _context.TaxExpendituresLog.FindAsync(secondpayment);
+            var expenditures = await _context.TaxExpendituresLog.Where(e => e.SecondPayment == secondpayment).FirstOrDefaultAsync();
             if (expenditures is null)
                 return null;
 
@@ -251,7 +251,7 @@ namespace SIBLEYBLAYOPERA.Services.TaxExpendituresLogService
 
         public async Task<List<TaxExpendituresLog>> UpdateExpendituresByAmountOfFirstPayment(int amountoffirstpayment, TaxExpendituresLog request)
         {
-            var expenditures = await _context.TaxExpendituresLog.FindAsync(amountoffirstpayment);
+          var expenditures = await _context.TaxExpendituresLog.Where(e => e.AmountOfFirstPayment == amountoffirstpayment).FirstOrDefaultAsync();
             if (expenditures is null)
                 return null;
 
@@ -263,7 +263,7 @@ namespace SIBLEYBLAYOPERA.Services.TaxExpendituresLogService
 
         public async Task<List<TaxExpendituresLog>> UpdateExpendituresByAmountOfSecondPayment(int amountofsecondpayment, TaxExpendituresLog request)
         {
-            var expenditures = await _context.TaxExpendituresLog.FindAsync(amountofsecondpayment);
+            var expenditures = await _context.TaxExpendituresLog.Where(e => e.AmountOfSecondPayment == amountofsecondpayment).FirstOrDefaultAsync();
             if (expenditures is null)
                 return null;
 
@@ -275,7 +275,7 @@ namespace SIBLEYBLAYOPERA.Services.TaxExpendituresLogService
 
         public async Task<List<TaxExpendituresLog>> UpdateExpendituresByTaxReceiptIDNumber(int taxreceiptidnumber, TaxExpendituresLog request)
         {
-            var expenditures = await _context.TaxExpendituresLog.FindAsync(taxreceiptidnumber);
+            var expenditures = await _context.TaxExpendituresLog.Where(e => e.TaxReceiptIDNumber == taxreceiptidnumber).FirstOrDefaultAsync();
             if (expenditures is null)
                 return null;
 
@@ -287,7 +287,7 @@ namespace SIBLEYBLAYOPERA.Services.TaxExpendituresLogService
 
         public async Task<List<TaxExpendituresLog>> DeleteExpendituresByTypeOfTax(string typeoftax)
         {
-            var expenditures = await _context.TaxExpendituresLog.FindAsync(typeoftax);
+            var expenditures = await _context.TaxExpendituresLog.Where(e => e.TypeOfTax == typeoftax).FirstOrDefaultAsync();
             if (expenditures is null)
                 return null;
 
@@ -299,7 +299,7 @@ namespace SIBLEYBLAYOPERA.Services.TaxExpendituresLogService
 
         public async Task<List<TaxExpendituresLog>> DeleteExpendituresByYear(DateTime year)
         {
-            var expenditures = await _context.TaxExpendituresLog.FindAsync(year);
+            var expenditures = await _context.TaxExpendituresLog.Where(e => e.Year == year).FirstOrDefaultAsync();
             if (expenditures is null)
                 return null;
 
@@ -311,7 +311,7 @@ namespace SIBLEYBLAYOPERA.Services.TaxExpendituresLogService
 
         public async Task<List<TaxExpendituresLog>> DeleteExpendituresByTotalYearlyExpenditure(int totalyearlyexpenditure)
         {
-            var expenditures = await _context.TaxExpendituresLog.FindAsync(totalyearlyexpenditure);
+            var expenditures = await _context.TaxExpendituresLog.Where(e => e.TotalYearlyExpenditure == totalyearlyexpenditure).FirstOrDefaultAsync();
             if (expenditures is null)
                 return null;
 
@@ -323,7 +323,7 @@ namespace SIBLEYBLAYOPERA.Services.TaxExpendituresLogService
 
         public async Task<List<TaxExpendituresLog>> DeleteExpendituresByTaxPaymentLocation(string taxpaymentlocation)
         {
-            var expenditures = await _context.TaxExpendituresLog.FindAsync(taxpaymentlocation);
+            var expenditures = await _context.TaxExpendituresLog.Where(e => e.TaxPaymentLocation == taxpaymentlocation).FirstOrDefaultAsync();
             if (expenditures is null)
                 return null;
 
@@ -335,7 +335,7 @@ namespace SIBLEYBLAYOPERA.Services.TaxExpendituresLogService
 
         public async Task<List<TaxExpendituresLog>> DeleteExpendituresByClearedAmount(int clearedamount)
         {
-            var expenditures = await _context.TaxExpendituresLog.FindAsync(clearedamount);
+            var expenditures = await _context.TaxExpendituresLog.Where(e => e.ClearedAmount == clearedamount).FirstOrDefaultAsync();
             if (expenditures is null)
                 return null;
 
@@ -347,7 +347,7 @@ namespace SIBLEYBLAYOPERA.Services.TaxExpendituresLogService
 
         public async Task<List<TaxExpendituresLog>> DeleteExpendituresByUnClearedAmount(int unclearedamount)
         {
-            var expenditures = await _context.TaxExpendituresLog.FindAsync(unclearedamount);
+            var expenditures = await _context.TaxExpendituresLog.Where(e => e.UnClearedAmount == unclearedamount).FirstOrDefaultAsync();
             if (expenditures is null)
                 return null;
 
@@ -359,7 +359,7 @@ namespace SIBLEYBLAYOPERA.Services.TaxExpendituresLogService
 
         public async Task<List<TaxExpendituresLog>> DeleteExpendituresByModeOfPayment(string modeofpayment)
         {
-            var expenditures = await _context.TaxExpendituresLog.FindAsync(modeofpayment);
+            var expenditures = await _context.TaxExpendituresLog.Where(e => e.ModeOfPayment == modeofpayment).FirstOrDefaultAsync();
             if (expenditures is null)
                 return null;
 
@@ -371,7 +371,7 @@ namespace SIBLEYBLAYOPERA.Services.TaxExpendituresLogService
 
         public async Task<List<TaxExpendituresLog>> DeleteExpendituresByFirstPayment(DateTime firstpayment)
         {
-            var expenditures = await _context.TaxExpendituresLog.FindAsync(firstpayment);
+            var expenditures = await _context.TaxExpendituresLog.Where(e => e.FirstPayment == firstpayment).FirstOrDefaultAsync();
             if (expenditures is null)
                 return null;
 
@@ -383,7 +383,7 @@ namespace SIBLEYBLAYOPERA.Services.TaxExpendituresLogService
 
         public async Task<List<TaxExpendituresLog>> DeleteExpendituresBySecondPayment(DateTime secondpayment)
         {
-            var expenditures = await _context.TaxExpendituresLog.FindAsync(secondpayment);
+            var expenditures = await _context.TaxExpendituresLog.Where(e => e.SecondPayment == secondpayment).FirstOrDefaultAsync();
             if (expenditures is null)
                 return null;
 
@@ -395,7 +395,7 @@ namespace SIBLEYBLAYOPERA.Services.TaxExpendituresLogService
 
         public async Task<List<TaxExpendituresLog>> DeleteExpendituresByAmountOfFirstPayment(int amountoffirstpayment)
         {
-            var expenditures = await _context.TaxExpendituresLog.FindAsync(amountoffirstpayment);
+            var expenditures = await _context.TaxExpendituresLog.Where(e => e.AmountOfFirstPayment == amountoffirstpayment).FirstOrDefaultAsync();
             if (expenditures is null)
                 return null;
 
@@ -407,7 +407,7 @@ namespace SIBLEYBLAYOPERA.Services.TaxExpendituresLogService
 
         public async Task<List<TaxExpendituresLog>> DeleteExpendituresByAmountOfSecondPayment(int amountofsecondpayment)
         {
-            var expenditures = await _context.TaxExpendituresLog.FindAsync(amountofsecondpayment);
+            var expenditures = await _context.TaxExpendituresLog.Where(e => e.AmountOfSecondPayment == amountofsecondpayment).FirstOrDefaultAsync();
             if (expenditures is null)
                 return null;
 
@@ -419,7 +419,7 @@ namespace SIBLEYBLAYOPERA.Services.TaxExpendituresLogService
 
         public async Task<List<TaxExpendituresLog>> DeleteExpendituresByTaxReceiptIDNumber(int taxreceiptidnumber)
         {
-            var expenditures = await _context.TaxExpendituresLog.FindAsync(taxreceiptidnumber);
+            var expenditures = await _context.TaxExpendituresLog.Where(e => e.TaxReceiptIDNumber == taxreceiptidnumber).FirstOrDefaultAsync();
             if (expenditures is null)
                 return null;
 

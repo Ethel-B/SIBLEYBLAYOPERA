@@ -27,7 +27,7 @@ namespace SIBLEYBLAYOPERA.Services.CollaborationsService
 
         public async Task<Collaborations> GetSingleCollaboByFirstName(string firstname)
         {
-            var collabo = await _context.Collaborations.FindAsync(firstname);
+            var collabo = await _context.Collaborations.Where(c => c.FirstName == firstname).FirstOrDefaultAsync();
             if (collabo is null)
                 return null;
 
@@ -36,7 +36,7 @@ namespace SIBLEYBLAYOPERA.Services.CollaborationsService
 
         public async Task<Collaborations> GetSingleCollaboByMiddleName(string middlename)
         {
-            var collabo = await _context.Collaborations.FindAsync(middlename);
+            var collabo = await _context.Collaborations.Where(c => c.MiddleName== middlename).FirstOrDefaultAsync();
             if (collabo is null)
                 return null;
 
@@ -45,7 +45,7 @@ namespace SIBLEYBLAYOPERA.Services.CollaborationsService
 
         public async Task<Collaborations> GetSingleCollaboByLastName(string lastname)
         {
-            var collabo = await _context.Collaborations.FindAsync(lastname);
+            var collabo = await _context.Collaborations.Where(c => c.LastName == lastname).FirstOrDefaultAsync();
             if (collabo is null)
                 return null;
 
@@ -54,7 +54,7 @@ namespace SIBLEYBLAYOPERA.Services.CollaborationsService
 
         public async Task<Collaborations> GetSingleCollaboByDateOfBirth(string dateofbirth)
         {
-            var collabo = await _context.Collaborations.FindAsync(dateofbirth);
+            var collabo = await _context.Collaborations.Where(c => c.DateOfBirth == dateofbirth).FirstOrDefaultAsync();
             if (collabo is null)
                 return null;
 
@@ -63,7 +63,7 @@ namespace SIBLEYBLAYOPERA.Services.CollaborationsService
 
         public async Task<Collaborations> GetSingleCollaboByAddress(string address)
         {
-            var collabo = await _context.Collaborations.FindAsync(address);
+            var collabo = await _context.Collaborations.Where(c => c.Address == address).FirstOrDefaultAsync();
             if (collabo is null)
                 return null;
 
@@ -72,7 +72,7 @@ namespace SIBLEYBLAYOPERA.Services.CollaborationsService
 
         public async Task<Collaborations> GetSingleCollaboByDepartment(string department)
         {
-            var collabo = await _context.Collaborations.FindAsync(department);
+            var collabo = await _context.Collaborations.Where(c => c.Department == department).FirstOrDefaultAsync();
             if (collabo is null)
                 return null;
 
@@ -81,7 +81,7 @@ namespace SIBLEYBLAYOPERA.Services.CollaborationsService
 
         public async Task<Collaborations> GetSingleCollaboByTelephone(int telephone)
         {
-            var collabo = await _context.Collaborations.FindAsync(telephone);
+            var collabo = await _context.Collaborations.Where(c => c.Telephone == telephone).FirstOrDefaultAsync();
             if (collabo is null)
                 return null;
 
@@ -90,7 +90,7 @@ namespace SIBLEYBLAYOPERA.Services.CollaborationsService
 
         public async Task<Collaborations> GetSingleCollaboByRoleStatus(string rolestatus)
         {
-            var collabo = await _context.Collaborations.FindAsync(rolestatus);
+            var collabo = await _context.Collaborations.Where(c => c.RoleStatus == rolestatus).FirstOrDefaultAsync();
             if (collabo is null)
                 return null;
 
@@ -99,7 +99,7 @@ namespace SIBLEYBLAYOPERA.Services.CollaborationsService
 
         public async Task<Collaborations> GetSingleCollaboByContractAgreement(DateTime contractagreement)
         {
-            var collabo = await _context.Collaborations.FindAsync(contractagreement);
+            var collabo = await _context.Collaborations.Where(c => c.ContractAgreement == contractagreement).FirstOrDefaultAsync();
             if (collabo is null)
                 return null;
 
@@ -107,8 +107,8 @@ namespace SIBLEYBLAYOPERA.Services.CollaborationsService
         }
 
         public async Task<Collaborations> GetSingleCollaboByContractDetails(string contractdetails)
-        {
-            var collabo = await _context.Collaborations.FindAsync(contractdetails);
+    {
+         var collabo = await _context.Collaborations.Where(c => c.ContractDetails == contractdetails).FirstOrDefaultAsync();
             if (collabo is null)
                 return null;
 
@@ -117,7 +117,7 @@ namespace SIBLEYBLAYOPERA.Services.CollaborationsService
 
         public async Task<Collaborations> GetSingleCollaboByContractAgreementExpiration(DateTime contractagreementexpiration)
         {
-            var collabo = await _context.Collaborations.FindAsync(contractagreementexpiration);
+            var collabo = await _context.Collaborations.Where(c => c.ContractAgreementExpiration == contractagreementexpiration).FirstOrDefaultAsync();
             if (collabo is null)
                 return null;
 
@@ -126,7 +126,7 @@ namespace SIBLEYBLAYOPERA.Services.CollaborationsService
 
         public async Task<Collaborations> GetSingleCollaboByAgreedContractPayment(int agreedcontractpayment)
         {
-            var collabo = await _context.Collaborations.FindAsync(agreedcontractpayment);
+            var collabo = await _context.Collaborations.Where(c => c.AgreedContractPayment == agreedcontractpayment).FirstOrDefaultAsync();
             if (collabo is null)
                 return null;
 
@@ -135,7 +135,7 @@ namespace SIBLEYBLAYOPERA.Services.CollaborationsService
 
         public async Task<Collaborations> GetSingleCollaboByAgreedPayment(DateTime agreedpayment)
         {
-            var collabo = await _context.Collaborations.FindAsync(agreedpayment);
+            var collabo = await _context.Collaborations.Where(c => c.AgreedPayment == agreedpayment).FirstOrDefaultAsync();
             if (collabo is null)
                 return null;
 
@@ -144,7 +144,7 @@ namespace SIBLEYBLAYOPERA.Services.CollaborationsService
 
         public async Task<Collaborations> GetSingleCollaboByHonouredContractPayment1(int honouredcontractpayment1)
         {
-            var collabo = await _context.Collaborations.FindAsync(honouredcontractpayment1);
+            var collabo = await _context.Collaborations.Where(c => c.HonouredContractPayment1 == honouredcontractpayment1).FirstOrDefaultAsync();
             if (collabo is null)
                 return null;
 
@@ -153,7 +153,7 @@ namespace SIBLEYBLAYOPERA.Services.CollaborationsService
 
         public async Task<Collaborations> GetSingleCollaboByHonouredContractPayment2(int honouredcontractpayment2)
         {
-            var collabo = await _context.Collaborations.FindAsync(honouredcontractpayment2);
+            var collabo = await _context.Collaborations.Where(c => c.HonouredContractPayment2 == honouredcontractpayment2).FirstOrDefaultAsync();
             if (collabo is null)
                 return null;
 
@@ -162,7 +162,7 @@ namespace SIBLEYBLAYOPERA.Services.CollaborationsService
 
         public async Task<Collaborations> GetSingleCollaboByUnHonouredContractPayment1(int unhonouredcontractpayment1)
         {
-            var collabo = await _context.Collaborations.FindAsync(unhonouredcontractpayment1);
+            var collabo = await _context.Collaborations.Where(c => c.UnHonouredContractPayment1 == unhonouredcontractpayment1).FirstOrDefaultAsync();
             if (collabo is null)
                 return null;
 
@@ -171,7 +171,7 @@ namespace SIBLEYBLAYOPERA.Services.CollaborationsService
 
         public async Task<Collaborations> GetSingleCollaboByUnHonouredContractPayment2(int unhonouredcontractpayment2)
         {
-            var collabo = await _context.Collaborations.FindAsync(unhonouredcontractpayment2);
+             var collabo = await _context.Collaborations.Where(c => c.UnHonouredContractPayment2 == unhonouredcontractpayment2).FirstOrDefaultAsync();
             if (collabo is null)
                 return null;
 
@@ -180,7 +180,7 @@ namespace SIBLEYBLAYOPERA.Services.CollaborationsService
 
         public async Task<Collaborations> GetSingleCollaboByHonouredPayment1(DateTime honouredpayment1)
         {
-            var collabo = await _context.Collaborations.FindAsync(honouredpayment1);
+            var collabo = await _context.Collaborations.Where(c => c.HonouredPayment1 == honouredpayment1).FirstOrDefaultAsync();
             if (collabo is null)
                 return null;
 
@@ -189,7 +189,7 @@ namespace SIBLEYBLAYOPERA.Services.CollaborationsService
 
         public async Task<Collaborations> GetSingleCollaboByHonouredPayment2(DateTime honouredpayment2)
         {
-            var collabo = await _context.Collaborations.FindAsync(honouredpayment2);
+            var collabo = await _context.Collaborations.Where(c => c.HonouredPayment2 == honouredpayment2).FirstOrDefaultAsync();
             if (collabo is null)
                 return null;
 
@@ -198,7 +198,7 @@ namespace SIBLEYBLAYOPERA.Services.CollaborationsService
 
         public async Task<Collaborations> GetSingleCollaboByUnHonouredPayment1(DateTime unhonouredpayment1)
         {
-            var collabo = await _context.Collaborations.FindAsync(unhonouredpayment1);
+            var collabo = await _context.Collaborations.Where(c => c.UnHonouredPayment1 == unhonouredpayment1).FirstOrDefaultAsync();
             if (collabo is null)
                 return null;
 
@@ -207,7 +207,7 @@ namespace SIBLEYBLAYOPERA.Services.CollaborationsService
 
         public async Task<Collaborations> GetSingleCollaboByUnHonouredPayment2(DateTime unhonouredpayment2)
         {
-            var collabo = await _context.Collaborations.FindAsync(unhonouredpayment2);
+            var collabo = await _context.Collaborations.Where(c => c.UnHonouredPayment2 == unhonouredpayment2).FirstOrDefaultAsync();
             if (collabo is null)
                 return null;
 
@@ -216,7 +216,7 @@ namespace SIBLEYBLAYOPERA.Services.CollaborationsService
 
         public async Task<Collaborations> GetSingleCollaboByModeOfPayment(string modeofpayment)
         {
-            var collabo = await _context.Collaborations.FindAsync(modeofpayment);
+            var collabo = await _context.Collaborations.Where(c => c.ModeOfPayment == modeofpayment).FirstOrDefaultAsync();
             if (collabo is null)
                 return null;
 
@@ -225,7 +225,7 @@ namespace SIBLEYBLAYOPERA.Services.CollaborationsService
 
         public async Task<Collaborations> GetSingleCollaboByEContractPaymentAccountNumber(int econtractpaymentaccountnumber)
         {
-            var collabo = await _context.Collaborations.FindAsync(econtractpaymentaccountnumber);
+            var collabo = await _context.Collaborations.Where(c => c.EContractPaymentAccountNumber == econtractpaymentaccountnumber).FirstOrDefaultAsync();
             if (collabo is null)
                 return null;
 
@@ -234,7 +234,7 @@ namespace SIBLEYBLAYOPERA.Services.CollaborationsService
 
         public async Task<Collaborations> GetSingleCollaboByContractPaymentAddress(string contractpaymentaddress)
         {
-            var collabo = await _context.Collaborations.FindAsync(contractpaymentaddress);
+            var collabo = await _context.Collaborations.Where(c => c.ContractPaymentAddress == contractpaymentaddress).FirstOrDefaultAsync();
             if (collabo is null)
                 return null;
 
@@ -250,7 +250,7 @@ namespace SIBLEYBLAYOPERA.Services.CollaborationsService
 
         public async Task<List<Collaborations>> UpdateCollaboByFirstName(string firstname, Collaborations request)
         {
-            var collabo = await _context.Collaborations.FindAsync(firstname);
+            var collabo = await _context.Collaborations.Where(c => c.FirstName == firstname).FirstOrDefaultAsync();
             if (collabo is null)
                 return null;
 
@@ -262,7 +262,7 @@ namespace SIBLEYBLAYOPERA.Services.CollaborationsService
 
         public async Task<List<Collaborations>> UpdateCollaboByMiddleName(string middlename, Collaborations request)
         {
-            var collabo = await _context.Collaborations.FindAsync(middlename);
+            var collabo = await _context.Collaborations.Where(c => c.MiddleName == middlename).FirstOrDefaultAsync();
             if (collabo is null)
                 return null;
 
@@ -274,7 +274,7 @@ namespace SIBLEYBLAYOPERA.Services.CollaborationsService
 
         public async Task<List<Collaborations>> UpdateCollaboByLastName(string lastname, Collaborations request)
         {
-            var collabo = await _context.Collaborations.FindAsync(lastname);
+            var collabo = await _context.Collaborations.Where(c => c.LastName == lastname).FirstOrDefaultAsync();
             if (collabo is null)
                 return null;
 
@@ -286,7 +286,7 @@ namespace SIBLEYBLAYOPERA.Services.CollaborationsService
 
         public async Task<List<Collaborations>> UpdateCollaboByDateOfBirth(string dateofbirth, Collaborations request)
         {
-            var collabo = await _context.Collaborations.FindAsync(dateofbirth);
+            var collabo = await _context.Collaborations.Where(c => c.DateOfBirth == dateofbirth).FirstOrDefaultAsync();
             if (collabo is null)
                 return null;
 
@@ -298,7 +298,7 @@ namespace SIBLEYBLAYOPERA.Services.CollaborationsService
 
         public async Task<List<Collaborations>> UpdateCollaboByAddress(string address, Collaborations request)
         {
-            var collabo = await _context.Collaborations.FindAsync(address);
+            var collabo = await _context.Collaborations.Where(c => c.Address == address).FirstOrDefaultAsync();
             if (collabo is null)
                 return null;
 
@@ -310,7 +310,7 @@ namespace SIBLEYBLAYOPERA.Services.CollaborationsService
 
         public async Task<List<Collaborations>> UpdateCollaboByDepartment(string department, Collaborations request)
         {
-            var collabo = await _context.Collaborations.FindAsync(department);
+            var collabo = await _context.Collaborations.Where(c => c.Department== department).FirstOrDefaultAsync();
             if (collabo is null)
                 return null;
 
@@ -322,7 +322,7 @@ namespace SIBLEYBLAYOPERA.Services.CollaborationsService
 
         public async Task<List<Collaborations>> UpdateCollaboByTelephone(int telephone, Collaborations request)
         {
-            var collabo = await _context.Collaborations.FindAsync(telephone);
+            var collabo = await _context.Collaborations.Where(c => c.Telephone == telephone).FirstOrDefaultAsync();
             if (collabo is null)
                 return null;
 
@@ -334,7 +334,7 @@ namespace SIBLEYBLAYOPERA.Services.CollaborationsService
 
         public async Task<List<Collaborations>> UpdateCollaboByRoleStatus(string rolestatus, Collaborations request)
         {
-            var collabo = await _context.Collaborations.FindAsync(rolestatus);
+            var collabo = await _context.Collaborations.Where(c => c.RoleStatus == rolestatus).FirstOrDefaultAsync();
             if (collabo is null)
                 return null;
 
@@ -346,7 +346,7 @@ namespace SIBLEYBLAYOPERA.Services.CollaborationsService
 
         public async Task<List<Collaborations>> UpdateCollaboByContractAgreement(DateTime contractagreement, Collaborations request)
         {
-            var collabo = await _context.Collaborations.FindAsync(contractagreement);
+            var collabo = await _context.Collaborations.Where(c => c.ContractAgreement == contractagreement).FirstOrDefaultAsync();
             if (collabo is null)
                 return null;
 
@@ -358,7 +358,7 @@ namespace SIBLEYBLAYOPERA.Services.CollaborationsService
 
         public async Task<List<Collaborations>> UpdateCollaboByContractDetails(string contractdetails, Collaborations request)
         {
-            var collabo = await _context.Collaborations.FindAsync(contractdetails);
+            var collabo = await _context.Collaborations.Where(c => c.ContractDetails == contractdetails).FirstOrDefaultAsync();
             if (collabo is null)
                 return null;
 
@@ -370,7 +370,7 @@ namespace SIBLEYBLAYOPERA.Services.CollaborationsService
 
         public async Task<List<Collaborations>> UpdateCollaboByContractAgreementExpiration(DateTime contractagreementexpiration, Collaborations request)
         {
-            var collabo = await _context.Collaborations.FindAsync(contractagreementexpiration);
+            var collabo = await _context.Collaborations.Where(c => c.ContractAgreementExpiration == contractagreementexpiration).FirstOrDefaultAsync();
             if (collabo is null)
                 return null;
 
@@ -382,7 +382,7 @@ namespace SIBLEYBLAYOPERA.Services.CollaborationsService
 
         public async Task<List<Collaborations>> UpdateCollaboByAgreedContractPayment(int agreedcontractpayment, Collaborations request)
         {
-            var collabo = await _context.Collaborations.FindAsync(agreedcontractpayment);
+            var collabo = await _context.Collaborations.Where(c => c.AgreedContractPayment == agreedcontractpayment).FirstOrDefaultAsync();
             if (collabo is null)
                 return null;
 
@@ -394,7 +394,7 @@ namespace SIBLEYBLAYOPERA.Services.CollaborationsService
 
         public async Task<List<Collaborations>> UpdateCollaboByAgreedPayment(DateTime agreedpayment, Collaborations request)
         {
-            var collabo = await _context.Collaborations.FindAsync(agreedpayment);
+            var collabo = await _context.Collaborations.Where(c => c.AgreedPayment == agreedpayment).FirstOrDefaultAsync();
             if (collabo is null)
                 return null;
 
@@ -406,7 +406,7 @@ namespace SIBLEYBLAYOPERA.Services.CollaborationsService
 
         public async Task<List<Collaborations>> UpdateCollaboByHonouredContractPayment1(int honouredcontractpayment1, Collaborations request)
         {
-            var collabo = await _context.Collaborations.FindAsync(honouredcontractpayment1);
+            var collabo = await _context.Collaborations.Where(c => c.HonouredContractPayment1 == honouredcontractpayment1).FirstOrDefaultAsync();
             if (collabo is null)
                 return null;
 
@@ -418,7 +418,7 @@ namespace SIBLEYBLAYOPERA.Services.CollaborationsService
 
         public async Task<List<Collaborations>> UpdateCollaboByHonouredContractPayment2(int honouredcontractpayment2, Collaborations request)
         {
-            var collabo = await _context.Collaborations.FindAsync(honouredcontractpayment2);
+            var collabo = await _context.Collaborations.Where(c => c.HonouredContractPayment2 == honouredcontractpayment2).FirstOrDefaultAsync();
             if (collabo is null)
                 return null;
 
@@ -430,7 +430,7 @@ namespace SIBLEYBLAYOPERA.Services.CollaborationsService
 
         public async Task<List<Collaborations>> UpdateCollaboByUnHonouredContractPayment1(int unhonouredcontractpayment1, Collaborations request)
         {
-            var collabo = await _context.Collaborations.FindAsync(unhonouredcontractpayment1);
+            var collabo = await _context.Collaborations.Where(c => c.UnHonouredContractPayment1 == unhonouredcontractpayment1).FirstOrDefaultAsync();
             if (collabo is null)
                 return null;
 
@@ -442,7 +442,7 @@ namespace SIBLEYBLAYOPERA.Services.CollaborationsService
 
         public async Task<List<Collaborations>> UpdateCollaboByUnHonouredContractPayment2(int unhonouredcontractpayment2, Collaborations request)
         {
-            var collabo = await _context.Collaborations.FindAsync(unhonouredcontractpayment2);
+            var collabo = await _context.Collaborations.Where(c => c.UnHonouredContractPayment2 == unhonouredcontractpayment2).FirstOrDefaultAsync();
             if (collabo is null)
                 return null;
 
@@ -454,7 +454,7 @@ namespace SIBLEYBLAYOPERA.Services.CollaborationsService
 
         public async Task<List<Collaborations>> UpdateCollaboByHonouredPayment1(DateTime honouredpayment1, Collaborations request)
         {
-            var collabo = await _context.Collaborations.FindAsync(honouredpayment1);
+            var collabo = await _context.Collaborations.Where(c => c.HonouredPayment1 == honouredpayment1).FirstOrDefaultAsync();
             if (collabo is null)
                 return null;
 
@@ -466,7 +466,7 @@ namespace SIBLEYBLAYOPERA.Services.CollaborationsService
 
         public async Task<List<Collaborations>> UpdateCollaboByHonouredPayment2(DateTime honouredpayment2, Collaborations request)
         {
-            var collabo = await _context.Collaborations.FindAsync(honouredpayment2);
+            var collabo = await _context.Collaborations.Where(c => c.HonouredPayment2 == honouredpayment2).FirstOrDefaultAsync();
             if (collabo is null)
                 return null;
 
@@ -478,7 +478,7 @@ namespace SIBLEYBLAYOPERA.Services.CollaborationsService
 
         public async Task<List<Collaborations>> UpdateCollaboByUnHonouredPayment1(DateTime unhonouredpayment1, Collaborations request)
         {
-            var collabo = await _context.Collaborations.FindAsync(unhonouredpayment1);
+            var collabo = await _context.Collaborations.Where(c => c.UnHonouredPayment1 == unhonouredpayment1).FirstOrDefaultAsync();
             if (collabo is null)
                 return null;
 
@@ -490,7 +490,7 @@ namespace SIBLEYBLAYOPERA.Services.CollaborationsService
 
         public async Task<List<Collaborations>> UpdateCollaboByUnHonouredPayment2(DateTime unhonouredpayment2, Collaborations request)
         {
-            var collabo = await _context.Collaborations.FindAsync(unhonouredpayment2);
+              var collabo = await _context.Collaborations.Where(c => c.UnHonouredPayment2 == unhonouredpayment2).FirstOrDefaultAsync();
             if (collabo is null)
                 return null;
 
@@ -502,7 +502,7 @@ namespace SIBLEYBLAYOPERA.Services.CollaborationsService
 
         public async Task<List<Collaborations>> UpdateCollaboByModeOfPayment(string modeofpayment, Collaborations request)
         {
-            var collabo = await _context.Collaborations.FindAsync(modeofpayment);
+            var collabo = await _context.Collaborations.Where(c => c.ModeOfPayment == modeofpayment).FirstOrDefaultAsync();
             if (collabo is null)
                 return null;
 
@@ -514,7 +514,7 @@ namespace SIBLEYBLAYOPERA.Services.CollaborationsService
 
         public async Task<List<Collaborations>> UpdateCollaboByEContractPaymentAccountNumber(int econtractpaymentaccountnumber, Collaborations request)
         {
-            var collabo = await _context.Collaborations.FindAsync(econtractpaymentaccountnumber);
+            var collabo = await _context.Collaborations.Where(c => c.EContractPaymentAccountNumber == econtractpaymentaccountnumber).FirstOrDefaultAsync();
             if (collabo is null)
                 return null;
 
@@ -526,7 +526,7 @@ namespace SIBLEYBLAYOPERA.Services.CollaborationsService
 
         public async Task<List<Collaborations>> UpdateCollaboByContractPaymentAddress(string contractpaymentaddress, Collaborations request)
         {
-            var collabo = await _context.Collaborations.FindAsync(contractpaymentaddress);
+            var collabo = await _context.Collaborations.Where(c => c.ContractPaymentAddress == contractpaymentaddress).FirstOrDefaultAsync();
             if (collabo is null)
                 return null;
 
@@ -538,7 +538,7 @@ namespace SIBLEYBLAYOPERA.Services.CollaborationsService
 
         public async Task<List<Collaborations>> DeleteCollaboByFirstName(string firstname)
         {
-            var collabo = await _context.Collaborations.FindAsync(firstname);
+            var collabo = await _context.Collaborations.Where(c => c.FirstName == firstname).FirstOrDefaultAsync();
             if (collabo is null)
                 return null;
 
@@ -551,7 +551,7 @@ namespace SIBLEYBLAYOPERA.Services.CollaborationsService
 
         public async Task<List<Collaborations>> DeleteCollaboByMiddleName(string middlename)
         {
-            var collabo = await _context.Collaborations.FindAsync(middlename);
+            var collabo = await _context.Collaborations.Where(c => c.MiddleName == middlename).FirstOrDefaultAsync();
             if (collabo is null)
                 return null;
 
@@ -564,7 +564,7 @@ namespace SIBLEYBLAYOPERA.Services.CollaborationsService
 
         public async Task<List<Collaborations>> DeleteCollaboByLastName(string lastname)
         {
-            var collabo = await _context.Collaborations.FindAsync(lastname);
+            var collabo = await _context.Collaborations.Where(c => c.LastName == lastname).FirstOrDefaultAsync();
             if (collabo is null)
                 return null;
 
@@ -577,7 +577,7 @@ namespace SIBLEYBLAYOPERA.Services.CollaborationsService
 
         public async Task<List<Collaborations>> DeleteCollaboByDateOfBirth(string dateofbirth)
         {
-            var collabo = await _context.Collaborations.FindAsync(dateofbirth);
+            var collabo = await _context.Collaborations.Where(c => c.DateOfBirth == dateofbirth).FirstOrDefaultAsync();
             if (collabo is null)
                 return null;
 
@@ -590,7 +590,7 @@ namespace SIBLEYBLAYOPERA.Services.CollaborationsService
 
         public async Task<List<Collaborations>> DeleteCollaboByAddress(string address)
         {
-            var collabo = await _context.Collaborations.FindAsync(address);
+            var collabo = await _context.Collaborations.Where(c => c.Address == address).FirstOrDefaultAsync();
             if (collabo is null)
                 return null;
 
@@ -603,7 +603,7 @@ namespace SIBLEYBLAYOPERA.Services.CollaborationsService
 
         public async Task<List<Collaborations>> DeleteCollaboByDepartment(string department)
         {
-            var collabo = await _context.Collaborations.FindAsync(department);
+            var collabo = await _context.Collaborations.Where(c => c.Department == department).FirstOrDefaultAsync();
             if (collabo is null)
                 return null;
 
@@ -616,7 +616,7 @@ namespace SIBLEYBLAYOPERA.Services.CollaborationsService
 
         public async Task<List<Collaborations>> DeleteCollaboByTelephone(int telephone)
         {
-            var collabo = await _context.Collaborations.FindAsync(telephone);
+            var collabo = await _context.Collaborations.Where(c => c.Telephone == telephone).FirstOrDefaultAsync();
             if (collabo is null)
                 return null;
 
@@ -629,7 +629,7 @@ namespace SIBLEYBLAYOPERA.Services.CollaborationsService
 
         public async Task<List<Collaborations>> DeleteCollaboByRoleStatus(string rolestatus)
         {
-            var collabo = await _context.Collaborations.FindAsync(rolestatus);
+            var collabo = await _context.Collaborations.Where(c => c.RoleStatus == rolestatus).FirstOrDefaultAsync();
             if (collabo is null)
                 return null;
 
@@ -642,7 +642,7 @@ namespace SIBLEYBLAYOPERA.Services.CollaborationsService
 
         public async Task<List<Collaborations>> DeleteCollaboByContractAgreement(DateTime contractagreement)
         {
-            var collabo = await _context.Collaborations.FindAsync(contractagreement);
+            var collabo = await _context.Collaborations.Where(c => c.ContractAgreement == contractagreement).FirstOrDefaultAsync();
             if (collabo is null)
                 return null;
 
@@ -655,7 +655,7 @@ namespace SIBLEYBLAYOPERA.Services.CollaborationsService
 
         public async Task<List<Collaborations>> DeleteCollaboByContractDetails(string contractdetails)
         {
-            var collabo = await _context.Collaborations.FindAsync(contractdetails);
+            var collabo = await _context.Collaborations.Where(c => c.ContractDetails == contractdetails).FirstOrDefaultAsync();
             if (collabo is null)
                 return null;
 
@@ -668,7 +668,7 @@ namespace SIBLEYBLAYOPERA.Services.CollaborationsService
 
         public async Task<List<Collaborations>> DeleteCollaboByContractAgreementExpiration(DateTime contractagreementexpiration)
         {
-            var collabo = await _context.Collaborations.FindAsync(contractagreementexpiration);
+            var collabo = await _context.Collaborations.Where(c => c.ContractAgreementExpiration == contractagreementexpiration).FirstOrDefaultAsync();
             if (collabo is null)
                 return null;
 
@@ -681,7 +681,7 @@ namespace SIBLEYBLAYOPERA.Services.CollaborationsService
 
         public async Task<List<Collaborations>> DeleteCollaboByAgreedContractPayment(int agreedcontractpayment)
         {
-            var collabo = await _context.Collaborations.FindAsync(agreedcontractpayment);
+            var collabo = await _context.Collaborations.Where(c => c.AgreedContractPayment == agreedcontractpayment).FirstOrDefaultAsync();
             if (collabo is null)
                 return null;
 
@@ -694,7 +694,7 @@ namespace SIBLEYBLAYOPERA.Services.CollaborationsService
 
         public async Task<List<Collaborations>> DeleteCollaboByAgreedPayment(DateTime agreedpayment)
         {
-            var collabo = await _context.Collaborations.FindAsync(agreedpayment);
+            var collabo = await _context.Collaborations.Where(c => c.AgreedPayment == agreedpayment).FirstOrDefaultAsync();
             if (collabo is null)
                 return null;
 
@@ -707,7 +707,7 @@ namespace SIBLEYBLAYOPERA.Services.CollaborationsService
 
         public async Task<List<Collaborations>> DeleteCollaboByHonouredContractPayment1(int honouredcontractpayment1)
         {
-            var collabo = await _context.Collaborations.FindAsync(honouredcontractpayment1);
+            var collabo = await _context.Collaborations.Where(c => c.HonouredContractPayment1 == honouredcontractpayment1).FirstOrDefaultAsync();
             if (collabo is null)
                 return null;
 
@@ -720,7 +720,7 @@ namespace SIBLEYBLAYOPERA.Services.CollaborationsService
 
         public async Task<List<Collaborations>> DeleteCollaboByHonouredContractPayment2(int honouredcontractpayment2)
         {
-            var collabo = await _context.Collaborations.FindAsync(honouredcontractpayment2);
+            var collabo = await _context.Collaborations.Where(c => c.HonouredContractPayment2 == honouredcontractpayment2).FirstOrDefaultAsync();
             if (collabo is null)
                 return null;
 
@@ -733,7 +733,7 @@ namespace SIBLEYBLAYOPERA.Services.CollaborationsService
 
         public async Task<List<Collaborations>> DeleteCollaboByUnHonouredContractPayment1(int unhonouredcontractpayment1)
         {
-            var collabo = await _context.Collaborations.FindAsync(unhonouredcontractpayment1);
+            var collabo = await _context.Collaborations.Where(c => c.UnHonouredContractPayment1 == unhonouredcontractpayment1).FirstOrDefaultAsync();
             if (collabo is null)
                 return null;
 
@@ -746,7 +746,7 @@ namespace SIBLEYBLAYOPERA.Services.CollaborationsService
 
         public async Task<List<Collaborations>> DeleteCollaboByUnHonouredContractPayment2(int unhonouredcontractpayment2)
         {
-            var collabo = await _context.Collaborations.FindAsync(unhonouredcontractpayment2);
+            var collabo = await _context.Collaborations.Where(c => c.UnHonouredContractPayment2 == unhonouredcontractpayment2).FirstOrDefaultAsync();
             if (collabo is null)
                 return null;
 
@@ -759,7 +759,7 @@ namespace SIBLEYBLAYOPERA.Services.CollaborationsService
 
         public async Task<List<Collaborations>> DeleteCollaboByHonouredPayment1(DateTime honouredpayment1)
         {
-            var collabo = await _context.Collaborations.FindAsync(honouredpayment1);
+            var collabo = await _context.Collaborations.Where(c => c.HonouredPayment1 == honouredpayment1).FirstOrDefaultAsync();
             if (collabo is null)
                 return null;
 
@@ -772,7 +772,7 @@ namespace SIBLEYBLAYOPERA.Services.CollaborationsService
 
         public async Task<List<Collaborations>> DeleteCollaboByHonouredPayment2(DateTime honouredpayment2)
         {
-            var collabo = await _context.Collaborations.FindAsync(honouredpayment2);
+            var collabo = await _context.Collaborations.Where(c => c.HonouredPayment2 == honouredpayment2).FirstOrDefaultAsync();
             if (collabo is null)
                 return null;
 
@@ -785,7 +785,7 @@ namespace SIBLEYBLAYOPERA.Services.CollaborationsService
 
         public async Task<List<Collaborations>> DeleteCollaboByUnHonouredPayment1(DateTime unhonouredpayment1)
         {
-            var collabo = await _context.Collaborations.FindAsync(unhonouredpayment1);
+            var collabo = await _context.Collaborations.Where(c => c.UnHonouredPayment1 == unhonouredpayment1).FirstOrDefaultAsync();
             if (collabo is null)
                 return null;
 
@@ -798,7 +798,7 @@ namespace SIBLEYBLAYOPERA.Services.CollaborationsService
 
         public async Task<List<Collaborations>> DeleteCollaboByUnHonouredPayment2(DateTime unhonouredpayment2)
         {
-            var collabo = await _context.Collaborations.FindAsync(unhonouredpayment2);
+            var collabo = await _context.Collaborations.Where(c => c.UnHonouredPayment2 == unhonouredpayment2).FirstOrDefaultAsync();
             if (collabo is null)
                 return null;
 
@@ -811,7 +811,7 @@ namespace SIBLEYBLAYOPERA.Services.CollaborationsService
 
         public async Task<List<Collaborations>> DeleteCollaboByModeOfPayment(string modeofpayment)
         {
-            var collabo = await _context.Collaborations.FindAsync(modeofpayment);
+             var collabo = await _context.Collaborations.Where(c => c.ModeOfPayment == modeofpayment).FirstOrDefaultAsync();
             if (collabo is null)
                 return null;
 
@@ -824,7 +824,7 @@ namespace SIBLEYBLAYOPERA.Services.CollaborationsService
 
         public async Task<List<Collaborations>> DeleteCollaboByEContractPaymentAccountNumber(int econtractpaymentaccountnumber)
         {
-            var collabo = await _context.Collaborations.FindAsync(econtractpaymentaccountnumber);
+            var collabo = await _context.Collaborations.Where(c => c.EContractPaymentAccountNumber == econtractpaymentaccountnumber).FirstOrDefaultAsync();
             if (collabo is null)
                 return null;
 
@@ -837,7 +837,7 @@ namespace SIBLEYBLAYOPERA.Services.CollaborationsService
 
         public async Task<List<Collaborations>> DeleteCollaboByContractPaymentAddress(string contractpaymentaddress)
         {
-            var collabo = await _context.Collaborations.FindAsync(contractpaymentaddress);
+            var collabo = await _context.Collaborations.Where(c => c.ContractPaymentAddress == contractpaymentaddress).FirstOrDefaultAsync();
             if (collabo is null)
                 return null;
 
